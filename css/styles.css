@@ -648,149 +648,7 @@ section:nth-child(even) {
     100% { transform: translateY(10px); opacity: 0; }
 }
 
-/* Benefits Section - Estilização dos Cards Horizontais */
-.benefits-section {
-    background-color: var(--dark-secondary);
-    padding: 100px 0;
-}
 
-/* Container principal do card horizontal */
-.benefit-card-horizontal {
-    background-color: var(--white);
-    padding: 2.5rem;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--terciary-blue);
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px; /* Leve arredondamento para um ar moderno */
-}
-
-/* Efeito de hover: leve deslocamento e destaque na borda */
-.benefit-card-horizontal:hover {
-   /* transform: translateY(-2px) translateX(1px); */
-    border-color: rgba(89, 149, 197, 0.4);
-    background-color: rgba(89, 176, 197, 0.03);
-   /* box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.3); */
-    border-radius: 8px; 
-}
-
-/* Linha decorativa lateral que aparece no hover */
-.benefit-card-horizontal::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4px;
-    background-color: var(--terciary-blue);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-}
-
-.benefit-card-horizontal:hover::after {
-    transform: scaleY(1);
-}
-
-/* Estilização da "Thumbnail" / Ícone */
-.benefit-thumbnail {
-    min-width: 80px;
-    height: 80px;
-    background-color: rgba(89, 167, 197, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(89, 181, 197, 0.2);
-}
-
-.benefit-card-horizontal:hover .benefit-thumbnail {
-    background-color: var(--secondary-gold);
-    transform: rotate(-5deg) scale(1.1);
-}
-
-.benefit-thumbnail i {
-    font-size: 2rem;
-    color: var(--secondary-gold);
-    transition: all 0.3s ease;
-}
-
-.benefit-card-horizontal:hover .benefit-thumbnail i {
-    color: var(--terciary-blue);
-}
-
-/* Conteúdo de texto do card */
-.benefit-info h4 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.4rem;
-    color: var(--dark-tertiary);
-    margin-bottom: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.benefit-info p {
-    color: var(--text-gray-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* --- Otimização de Responsividade para os Cards --- */
-
-/* Tablets e telas médias (iPad, etc) */
-@media (max-width: 991px) {
-    .benefit-card-horizontal {
-        padding: 2rem;
-        gap: 1.5rem;
-    }
-    
-    .benefit-thumbnail {
-        min-width: 70px;
-        height: 70px;
-    }
-    
-    .benefit-thumbnail i {
-        font-size: 1.75rem;
-    }
-    
-    .benefit-info h4 {
-        font-size: 1.25rem;
-    }
-}
-
-/* Celulares grandes e médios */
-@media (max-width: 767px) {
-    .benefits-section {
-        padding: 60px 0;
-    }
-    
-    .benefit-card-horizontal {
-        flex-direction: row; /* Mantém horizontal em celulares médios se houver espaço */
-        text-align: left;
-    }
-}
-
-/* Celulares pequenos (iPhone SE, etc) */
-@media (max-width: 576px) {
-    .benefit-card-horizontal {
-        flex-direction: column; /* Empilha apenas em telas realmente pequenas */
-        text-align: center;
-        padding: 2rem 1.5rem;
-    }
-    
-    .benefit-thumbnail {
-        margin: 0 auto 1.5rem auto;
-    }
-    
-    .benefit-info p {
-        font-size: 0.9rem;
-    }
-}
 
 /* Services Section */
 .services-section {
@@ -1701,8 +1559,8 @@ section:nth-child(even) {
 /* Tablets e notebooks menores */
 @media (max-width: 991px) {
     .btn-scroll-top {
-        bottom: 80px;
-        right: 21px;
+        bottom: 90px;
+        right: 28px;
         width: 44px;
         height: 44px;
     }
@@ -1715,8 +1573,8 @@ section:nth-child(even) {
 /* Mobile */
 @media (max-width: 576px) {
     .btn-scroll-top {
-        bottom: 80px; /* sobe para não colidir com barra do navegador */
-        right: 23px;
+        bottom: 90px; /* sobe para não colidir com barra do navegador */
+        right: 28px;
 
         width: 40px;
         height: 40px;
@@ -1728,7 +1586,6 @@ section:nth-child(even) {
         font-size: 1rem;
     }
 }
-
 
 /* ============================
    Split Screen Layout - About

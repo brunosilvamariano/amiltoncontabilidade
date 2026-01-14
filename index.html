@@ -102,6 +102,8 @@
          CSS PERSONALIZADO
     ========================== -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Estilos do Assistente -->
+    <link rel="stylesheet" href="assets/css/assistente.css">
 
     <!-- =========================
          DADOS ESTRUTURADOS (LOGO NO GOOGLE)
@@ -914,10 +916,36 @@
                 </div>
             </div>
         </section>
-
     </main>
-    <!-- Footer -->
-    <footer class="footer-section py-5" role="contentinfo">
+
+    <!-- Assistente Virtual Hamilton -->
+    <div id="bot-floating-button" aria-label="Abrir chat com assistente">
+        <img src="assets/img/bot.svg" alt="Assistente Hamilton">
+    </div>
+
+    <div id="bot-chat-container">
+        <div class="bot-header">
+            <div class="bot-info">
+                <div class="bot-avatar">
+                    <img src="assets/img/bot.svg" alt="Bot">
+                </div>
+                <div class="bot-status">
+                    <h4>Assistente Hamilton 🤖</h4>
+                    <span>Online agora</span>
+                </div>
+            </div>
+            <div class="bot-close">&times;</div>
+        </div>
+        <div class="bot-messages" id="bot-messages-list">
+            <!-- Mensagens serão inseridas aqui -->
+        </div>
+        <div id="typing-indicator" class="typing-indicator">
+            <span></span><span></span><span></span>
+        </div>
+        <!-- Campo de digitação removido para fluxo 100% guiado por botões -->
+    </div>
+    
+    <!-- Footer --> <footer class="footer-section py-5" role="contentinfo">
         <div class="container">
 
             <div class="row g-4 mb-4">
@@ -996,9 +1024,9 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float Button -->
+    <!-- WhatsApp Float Button 
     <a href="https://wa.me/5547991597258?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." class="whatsapp-float" target="_blank">
-        <i class="bi bi-whatsapp"></i>
+        <i class="bi bi-whatsapp"></i> -->
     </a>
 
     <!-- Bootstrap JS -->
@@ -1009,8 +1037,9 @@
     
     <!-- Custom JS -->
     <script src="js/script.js"></script>
-
-    <!-- MODAL TABELA DE SERVIÇOS -->
+    <!-- Scripts do Assistente -->
+    <script src="assets/js/assistente.js"></script>
+</body><!-- MODAL TABELA DE SERVIÇOS -->
     <div class="modal fade"
         id="modalTabelaServicos"
         tabindex="-1"
