@@ -773,69 +773,86 @@ section:nth-child(even) {
 
 .testimonial-card {
     background-color: var(--dark-tertiary);
-    padding: 2.5rem;
-    border: 1px solid rgba(89, 172, 197, 0.1);
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
 .testimonial-card:hover {
-    border-color: rgba(89, 176, 197, 0.3);
+    border-color: var(--secondary-gold);
     transform: translateY(-5px);
 }
 
-.testimonial-quote {
-    font-family: var(--font-serif);
-    font-size: 4rem;
-    color: var(--secondary-gold);
-    opacity: 0.3;
-    line-height: 1;
-    margin-bottom: 1rem;
-}
-
-.testimonial-text {
-    color: var(--text-gray);
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    font-style: italic;
-}
-
-.testimonial-author {
+.testimonial-header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(89, 167, 197, 0.2);
+    margin-bottom: 1rem;
 }
 
-.author-initial {
-    width: 50px;
-    height: 50px;
+.author-avatar {
+    width: 40px;
+    height: 40px;
     background-color: var(--secondary-gold);
     color: var(--dark-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
     font-weight: 700;
-}
-
-.testimonial-author h5 {
-    font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
-    color: var(--white);
-    margin-bottom: 0.25rem;
-    font-weight: 700;
+    flex-shrink: 0;
 }
 
-.testimonial-author span {
+.author-info h5 {
+    font-size: 0.95rem;
+    color: var(--white);
+    margin: 0;
+    font-weight: 600;
+}
+
+.author-info .review-meta {
+    font-size: 0.8rem;
+    color: var(--text-gray-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.google-stars {
+    color: #ffc107;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 1px;
+    margin: 0.3rem 0;
+}
+
+.testimonial-text {
     color: var(--text-gray);
     font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.google-source {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-gray-secondary);
+    margin-top: auto;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.google-source i {
+    color: #4285F4;
 }
 
 /* --- Correção de Alinhamento e Centralização da Badge --- */
@@ -994,6 +1011,7 @@ section:nth-child(even) {
         font-size: 1.1rem;
     }
 }
+
 
 /* About Section */
 .about-section {
@@ -1241,37 +1259,38 @@ section:nth-child(even) {
 /* Footer */
 .footer-section {
     background-color: var(--dark-bg);
-    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-gray);
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
 }
 
-.footer-section h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem;
-    color: var(--white);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 700;
-}
-
-.footer-section h3 i {
-    color: var(--secondary-gold);
+.footer-brand-desc {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    max-width: 300px;
 }
 
 .footer-section h5 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     color: var(--white);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.footer-section p {
-    color: var(--text-gray);
-    font-size: 0.95rem;
-    line-height: 1.7;
+.footer-section h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--secondary-gold);
 }
 
 .footer-links {
@@ -1281,14 +1300,22 @@ section:nth-child(even) {
 }
 
 .footer-links li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .footer-links a {
     color: var(--text-gray);
     font-size: 0.95rem;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a i {
+    font-size: 0.8rem;
+    color: var(--secondary-gold);
+    opacity: 0.7;
 }
 
 .footer-links a:hover {
@@ -1296,28 +1323,70 @@ section:nth-child(even) {
     transform: translateX(5px);
 }
 
+.footer-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact-info li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.footer-contact-info i {
+    color: var(--secondary-gold);
+    font-size: 1.1rem;
+    margin-top: 4px;
+}
+
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
 }
 
 .social-links a {
-    width: 45px;
-    height: 45px;
-    background-color: var(--dark-tertiary);
-    border: 1px solid rgba(197, 160, 89, 0.2);
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-light);
-    font-size: 1.2rem;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.1rem;
+    transition: var(--transition);
 }
 
 .social-links a:hover {
+    background-color: var(--secondary-gold);
+    color: var(--dark-bg);
     border-color: var(--secondary-gold);
     transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.footer-bottom a {
+    color: var(--secondary-gold);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
 }
 
 .footer-section hr {
